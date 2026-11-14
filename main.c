@@ -92,6 +92,7 @@ int main(void)
             case 4:
                 if (orbita_calculada && propulsor_calculado) {
                     mostrarResultados(&resultados);
+                    mostrarDescripcionTrayectoria(&resultados);
                 } else {
                     printf("\nPrimero debe completar los calculos orbitales "
                            "y del propulsor.\n");
