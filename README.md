@@ -17,6 +17,8 @@ El proyecto corresponde al **Problema 2: Inserción y Estabilidad en Órbita Ter
 - Lucas Capra
 - Guido Gomez
 
+- Comision 2
+
 ## 3. Objetivos
 
 - Calcular las magnitudes físicas asociadas a una órbita circular terrestre.
@@ -126,13 +128,14 @@ El programa incorpora los siguientes recursos del lenguaje C:
 - Compilador GCC.
 - Lenguaje C estándar C11.
 - Terminal de comandos.
+- Herramienta Make.
 
 ### Compilar el proyecto
 
 Ubicarse en la carpeta principal del repositorio y ejecutar:
 
 ```bash
-gcc -std=c11 -Wall -Wextra -pedantic main.c artemis.c validaciones.c -o artemis -lm
+make
 ```
 
 ### Ejecutar el simulador
@@ -141,6 +144,22 @@ En Linux o GitHub Codespaces:
 
 ```bash
 ./artemis
+```
+
+### Compilación manual (alternativa)
+
+También es posible compilar el proyecto directamente con GCC:
+
+```bash
+gcc -std=c11 -Wall -Wextra -pedantic main.c artemis.c validaciones.c -o artemis -lm
+```
+
+### Limpiar el ejecutable
+
+Para eliminar el archivo generado durante la compilación:
+
+```bash
+make clean
 ```
 
 ## 10. Guía de verificación
@@ -180,5 +199,11 @@ Se utilizó ChatGPT como herramienta de apoyo para:
 3. Detección y resolución de errores.
 4. Organización visual del menú interactivo.
 5. Revisión y verificación de fórmulas y cálculos físicos.
+
+**Ejemplo de consulta realizada:**
+
+"Con los datos del Problema 2, podes revisar si las formulas que utilizamos para calcular la velocidad y el periodo orbital son correctas y si los resultados coinciden con lo esperado?"
+
+**Validacion y adaptacion:** Se contrastaron las fórmulas con los datos de la consigna y se comprobaron los resultados mediante la ejecución del programa.
 
 Las sugerencias fueron revisadas y adaptadas por los integrantes del equipo.
