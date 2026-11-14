@@ -59,6 +59,9 @@ typedef struct {
 void inicializarParametrosPredeterminados(ParametrosOrbita *parametros);
 void inicializarHistorial(HistorialMision *historial);
 
+/* Configuracion de parametros */
+int configurarParametrosOrbita(ParametrosOrbita *parametros);
+
 /* Calculos fisicos */
 int calcularOrbita(const ParametrosOrbita *parametros,
                    ResultadosOrbita *resultados);
