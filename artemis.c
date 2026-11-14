@@ -2,7 +2,7 @@
 #include "artemis.h"
 #include <math.h>
 #include <stddef.h>
-
+#include <stdio.h>
 
 
 int calcularOrbita(const ParametrosOrbita *parametros,
