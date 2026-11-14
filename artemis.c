@@ -1,4 +1,4 @@
-
+#include "validaciones.h"
 #include "artemis.h"
 #include <math.h>
 #include <stddef.h>
@@ -159,6 +159,58 @@ void inicializarHistorial(HistorialMision *historial)
         historial->eventos[i].descripcion[0] = '\0';
         historial->eventos[i].tiempo_s = 0.0;
     }
+}
+
+/* CONFIGURAR PARAMETROS ORBITALES */
+int configurarParametrosOrbita(ParametrosOrbita *parametros)
+{
+    double masa_tierra;
+    double radio_tierra;
+    double altitud;
+    double masa_orion;
+    double aceleracion;
+    double duracion;
+
+    if (parametros == NULL) {
+        return 0;
+    }
+
+    printf("\n=== CONFIGURACION ORBITAL ===\n");
+
+    if (!leerDoubleEnRango("Masa de la Tierra (kg): ",
+                           1.0e23, 1.0e26, &masa_tierra))
+        return 0;
+
+    if (!leerDoubleEnRango("Radio terrestre (m): ",
+                           1.0e6, 1.0e8, &radio_tierra))
+        return 0;
+
+    if (!leerDoubleEnRango("Altitud orbital (m): ",
+                           100000.0, 2000000.0, &altitud))
+        return 0;
+
+    if (!leerDoubleEnRango("Masa de Orion (kg): ",
+                           1000.0, 100000.0, &masa_orion))
+        return 0;
+
+    if (!leerDoubleEnRango("Aceleracion lateral (m/s2): ",
+                           0.01, 10.0, &aceleracion))
+        return 0;
+
+    if (!leerDoubleEnRango("Duracion del pulso (s): ",
+                           0.1, 600.0, &duracion))
+        return 0;
+
+    parametros->masa_tierra_kg = masa_tierra;
+    parametros->radio_tierra_m = radio_tierra;
+    parametros->altitud_orbital_m = altitud;
+    parametros->masa_orion_kg = masa_orion;
+    parametros->aceleracion_lateral = aceleracion;
+    parametros->duracion_pulso = duracion;
+
+    printf("\nParametros configurados correctamente.\n");
+
+    return 1;
 }
 
 
