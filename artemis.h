@@ -76,6 +76,7 @@ int registrarEvento(HistorialMision *historial,
 
 /* Presentacion de resultados */
 void mostrarResultados(const ResultadosOrbita *resultados);
+void mostrarDescripcionTrayectoria(const ResultadosOrbita *resultados);
 void mostrarHistorial(const HistorialMision *historial);
 
 #endif

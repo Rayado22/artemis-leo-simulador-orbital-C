@@ -291,7 +291,38 @@ void mostrarResultados(const ResultadosOrbita *resultados)
 
     printf("====================================\n");
 }
+/* DESCRIPCION DE LA TRAYECTORIA RESULTANTE */
 
+void mostrarDescripcionTrayectoria(const ResultadosOrbita *resultados)
+{
+    if (resultados == NULL) {
+        printf("Error: resultados no disponibles.\n");
+        return;
+    }
+
+    printf("\n====================================\n");
+    printf("     TRAYECTORIA RESULTANTE\n");
+    printf("====================================\n");
+
+    printf("El propulsor lateral aplica una aceleracion\n");
+    printf("perpendicular a la velocidad orbital de Orion.\n");
+
+    printf("Como consecuencia, la nave abandona su\n");
+    printf("trayectoria circular ideal y experimenta una\n");
+    printf("desviacion lateral.\n");
+
+    printf("\nDesviacion lateral: %.2f m\n",
+           resultados->desviacion_lateral_m);
+
+    printf("Velocidad lateral final: %.2f m/s\n",
+           resultados->velocidad_lateral_final_m_s);
+
+    printf("\nAl finalizar el pulso, la componente lateral\n");
+    printf("de velocidad persiste, modificando la trayectoria\n");
+    printf("posterior de la nave bajo la accion gravitatoria.\n");
+
+    printf("====================================\n");
+}
 
 /* MOSTRAR HISTORIAL DE LA MISION */
 
